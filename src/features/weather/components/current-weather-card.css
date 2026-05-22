@@ -1,52 +1,96 @@
 .current-weather-card {
-  border: 1px solid #d4d4d8;
-  border-radius: 10px;
-  padding: 20px;
+  border: 1.5px solid #e4e4e7;
+  border-radius: 12px;
+  padding: 24px;
   background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .current-weather-card__header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 12px;
 }
 
 .current-weather-card__city {
-  margin: 0 0 6px;
-  font-size: 24px;
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #0f172a;
 }
 
 .current-weather-card__condition {
   margin: 0;
-  color: #52525b;
+  color: #6b7280;
+  font-size: 14px;
 }
 
 .current-weather-card__icon {
   display: block;
+  flex-shrink: 0;
 }
 
 .current-weather-card__temperature {
-  margin: 16px 0;
-  font-size: 42px;
-  font-weight: 700;
+  margin: 20px 0 16px;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #0f172a;
 }
 
 .current-weather-card__details {
   margin: 0;
-  padding-left: 18px;
+  padding: 0;
+  list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.current-weather-card__details li {
+  background-color: #f1f5f9;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
 }
 
 .current-weather-card__favorite-button {
-  margin-top: 16px;
+  margin-top: 20px;
   min-height: 40px;
   border: none;
   border-radius: 8px;
-  padding: 0 14px;
-  cursor: pointer;
+  padding: 0 18px;
+  font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
   background-color: #0f766e;
   color: #ffffff;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.current-weather-card__favorite-button:hover {
+  background-color: #0d6b63;
+}
+
+.current-weather-card__favorite-button:active {
+  background-color: #0a5d57;
+  transform: translateY(1px);
+}
+
+.current-weather-card__favorite-button--active {
+  background-color: #dc2626;
+}
+
+.current-weather-card__favorite-button--active:hover {
+  background-color: #b91c1c;
+}
+
+.current-weather-card__favorite-button--active:active {
+  background-color: #991b1b;
+  transform: translateY(1px);
 }

@@ -70,9 +70,10 @@ export const FavoritesPanel = ({
               <button
                 className="favorites-panel__remove-button"
                 type="button"
+                title="Remove from favorites"
                 onClick={handleRemoveClick}
               >
-                Remove
+                ×
               </button>
             </li>
           )

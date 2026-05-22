@@ -1,20 +1,30 @@
 .app {
   margin: 0 auto;
   max-width: 720px;
-  padding: 48px 16px;
+  padding: 56px 20px 80px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 24px;
+}
+
+@media (max-width: 480px) {
+  .app {
+    padding: 32px 16px 60px;
+    gap: 18px;
+  }
 }
 
 .app__title {
   margin: 0;
-  font-size: 32px;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
   line-height: 1.2;
+  color: #0f172a;
 }
 
 .app__content {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 24px;
 }

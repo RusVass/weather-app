@@ -6,6 +6,8 @@
 
 .city-search-form__label {
   font-weight: 600;
+  color: #374151;
+  font-size: 14px;
 }
 
 .city-search-form__controls {
@@ -15,20 +17,42 @@
 
 .city-search-form__input {
   flex: 1;
-  min-height: 40px;
-  border: 1px solid #a1a1aa;
+  min-height: 44px;
+  border: 1.5px solid #a1a1aa;
   border-radius: 8px;
-  padding: 0 12px;
+  padding: 0 14px;
   font-size: 16px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.city-search-form__input:hover {
+  border-color: #6b7280;
+}
+
+.city-search-form__input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .city-search-form__button {
-  min-height: 40px;
+  min-height: 44px;
   border: none;
   border-radius: 8px;
-  padding: 0 16px;
+  padding: 0 20px;
+  font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   background-color: #2563eb;
   color: #ffffff;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.city-search-form__button:hover {
+  background-color: #1d4ed8;
+}
+
+.city-search-form__button:active {
+  background-color: #1e40af;
+  transform: translateY(1px);
 }

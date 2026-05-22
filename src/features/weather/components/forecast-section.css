@@ -1,12 +1,18 @@
 .forecast-section {
-  border: 1px solid #d4d4d8;
-  border-radius: 10px;
+  border: 1.5px solid #e4e4e7;
+  border-radius: 12px;
   padding: 20px;
   background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .forecast-section__title {
-  margin: 0 0 12px;
+  margin: 0 0 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .forecast-section__list {
@@ -15,34 +21,46 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 2px;
 }
 
 .forecast-section__item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  border: 1px solid #e4e4e7;
+  gap: 12px;
   border-radius: 8px;
-  padding: 8px 10px;
+  padding: 10px 12px;
+  transition: background-color 0.15s ease;
+}
+
+.forecast-section__item:hover {
+  background-color: #f8fafc;
 }
 
 .forecast-section__date {
   margin: 0;
-  min-width: 96px;
+  min-width: 100px;
+  font-size: 14px;
   font-weight: 600;
+  color: #0f172a;
 }
 
 .forecast-section__icon {
   display: block;
+  flex-shrink: 0;
 }
 
 .forecast-section__temps {
   margin: 0;
-  min-width: 114px;
+  min-width: 110px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
 }
 
 .forecast-section__condition {
   margin: 0;
-  color: #52525b;
+  flex: 1;
+  font-size: 13px;
+  color: #6b7280;
 }

@@ -59,7 +59,7 @@ export const CurrentWeatherCard = ({
       </ul>
 
       <button
-        className="current-weather-card__favorite-button"
+        className={`current-weather-card__favorite-button${isFavorite ? ' current-weather-card__favorite-button--active' : ''}`}
         type="button"
         onClick={handleFavoriteButtonClick}
       >
