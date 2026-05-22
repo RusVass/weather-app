@@ -1,4 +1,4 @@
-# Weather App, Test Assignment
+# Weather App
 
 A React application for viewing current weather and a 5-day forecast by city name.
 
@@ -61,16 +61,6 @@ npm run dev
 ## Live Demo
 
 https://rusvass.github.io/weather-app/
-
-## GitHub Pages Deployment
-
-This project is configured for automatic deployment to GitHub Pages with GitHub Actions.
-
-1. Push code to the `main` branch.
-2. In your GitHub repository, open `Settings` → `Secrets and variables` → `Actions`.
-3. Add a repository secret named `VITE_WEATHER_API_KEY` with your WeatherAPI key.
-4. In `Settings` → `Pages`, set `Source` to `GitHub Actions`.
-5. After each push to `main`, workflow `.github/workflows/deploy.yml` will build and deploy `dist`.
 
 ## Project Structure
 
