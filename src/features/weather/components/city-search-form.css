@@ -1,51 +1,55 @@
 .city-search-form {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
 .city-search-form__label {
-  font-weight: 600;
-  color: #374151;
-  font-size: 14px;
+  display: none;
 }
 
 .city-search-form__controls {
   display: flex;
-  gap: 8px;
+  border: 1.5px solid #a1a1aa;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.city-search-form__controls:hover {
+  border-color: #6b7280;
+}
+
+.city-search-form__controls:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .city-search-form__input {
   flex: 1;
   min-height: 44px;
-  border: 1.5px solid #a1a1aa;
-  border-radius: 8px;
+  border: none;
+  border-radius: 0;
   padding: 0 14px;
-  font-size: 16px;
+  font-size: 15px;
   outline: none;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.city-search-form__input:hover {
-  border-color: #6b7280;
-}
-
-.city-search-form__input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+  background: transparent;
 }
 
 .city-search-form__button {
+  width: 46px;
   min-height: 44px;
+  flex-shrink: 0;
   border: none;
-  border-radius: 8px;
-  padding: 0 20px;
-  font-size: 15px;
-  font-weight: 600;
+  border-left: 1px solid #e4e4e7;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   background-color: #2563eb;
   color: #ffffff;
-  transition: background-color 0.15s ease, transform 0.1s ease;
+  transition: background-color 0.15s ease;
 }
 
 .city-search-form__button:hover {
@@ -54,5 +58,4 @@
 
 .city-search-form__button:active {
   background-color: #1e40af;
-  transform: translateY(1px);
 }

@@ -89,15 +89,12 @@ const App = (): ReactElement => {
     }
 
     return (
-      <div className="app__content">
-        <CurrentWeatherCard
-          weather={currentWeatherQuery.data}
-          isFavorite={isCurrentCityFavorite()}
-          onAddFavorite={addFavorite}
-          onRemoveFavorite={removeFavorite}
-        />
-        <ForecastSection forecast={forecastQuery.data} />
-      </div>
+      <CurrentWeatherCard
+        weather={currentWeatherQuery.data}
+        isFavorite={isCurrentCityFavorite()}
+        onAddFavorite={addFavorite}
+        onRemoveFavorite={removeFavorite}
+      />
     )
   }
 
@@ -105,13 +102,16 @@ const App = (): ReactElement => {
     <main className="app">
       <h1 className="app__title">City Weather</h1>
       <CitySearchForm onSearch={handleSearch} />
+      {currentWeatherQuery.data != null && forecastQuery.data != null && (
+        <ForecastSection forecast={forecastQuery.data} />
+      )}
+      {renderMainContent()}
       <FavoritesPanel
         favorites={favorites}
         selectedCity={selectedCity}
         onSelectCity={handleSelectFavoriteCity}
         onRemoveFavorite={removeFavorite}
       />
-      {renderMainContent()}
     </main>
   )
 }

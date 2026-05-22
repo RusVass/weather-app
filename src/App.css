@@ -1,32 +1,90 @@
 .app {
   margin: 0 auto;
   max-width: 780px;
-  padding: 56px 24px 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  padding: 36px 24px 80px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 20px;
+  row-gap: 12px;
 }
 
 @media (max-width: 480px) {
   .app {
-    padding: 32px 16px 60px;
-    gap: 18px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px 60px;
+    gap: 16px;
   }
 }
 
 .app__title {
   margin: 0;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #d0e4f0;
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 700;
-  letter-spacing: -0.5px;
-  line-height: 1.2;
+  letter-spacing: -0.4px;
+  line-height: 1;
   color: #0f172a;
+  align-self: center;
+  white-space: nowrap;
 }
 
-.app__content {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.favorites-panel,
+.status-view,
+.forecast-section,
+.current-weather-card {
+  grid-column: 1 / -1;
+}
+
+/* Connected: forecast + current weather + favorites (loaded state) */
+.app:has(.forecast-section) .forecast-section {
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  box-shadow: none;
+  margin-bottom: -12px;
+  position: relative;
+  z-index: 3;
+}
+
+.app:has(.forecast-section) .current-weather-card {
+  border-radius: 0;
+  border-bottom: none;
+  box-shadow: none;
+  margin-bottom: -12px;
+  position: relative;
+  z-index: 2;
+}
+
+.app:has(.forecast-section) .favorites-panel {
+  border-radius: 0 0 12px 12px;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Connected: status view + favorites (empty/loading/error state) */
+.app:not(:has(.forecast-section)) .status-view {
+  border-bottom: none;
+  border-radius: 12px 12px 0 0;
+  box-shadow: none;
+  margin-bottom: -12px;
+  position: relative;
+  z-index: 2;
+}
+
+.app:not(:has(.forecast-section)) .favorites-panel {
+  border-radius: 0 0 12px 12px;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .app:has(.forecast-section) .forecast-section,
+  .app:not(:has(.forecast-section)) .status-view {
+    margin-bottom: -16px;
+  }
+
+  .app:has(.forecast-section) .current-weather-card {
+    margin-bottom: -16px;
+  }
 }
