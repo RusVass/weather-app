@@ -1,13 +1,14 @@
 .favorites-panel {
   border: 1.5px solid #e4e4e7;
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px 20px;
   background-color: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  min-width: 0;
 }
 
 .favorites-panel__title {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   font-size: 13px;
   font-weight: 600;
   color: #6b7280;
@@ -23,84 +24,86 @@
 
 .favorites-panel__list {
   margin: 0;
-  padding: 0;
+  padding: 0 0 2px;
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.favorites-panel__list::-webkit-scrollbar {
+  display: none;
 }
 
 .favorites-panel__item {
   display: flex;
   align-items: center;
-  border: 1.5px solid #e4e4e7;
-  border-radius: 10px;
+  flex-shrink: 0;
+  height: 36px;
+  border: 1.5px solid #d0e4f0;
+  border-radius: 20px;
   overflow: hidden;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .favorites-panel__item:hover {
-  border-color: #cbd5e1;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  border-color: #93c5e8;
+  background-color: #f0f7fd;
 }
 
 .favorites-panel__item:has(.favorites-panel__select-button--active) {
+  background-color: #2563eb;
   border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .favorites-panel__select-button {
-  flex: 1;
-  min-height: 48px;
+  height: 100%;
   border: none;
   background: transparent;
   cursor: pointer;
-  text-align: left;
-  padding: 0 16px;
-  font-size: 15px;
+  padding: 0 6px 0 14px;
+  font-size: 14px;
   font-weight: 500;
   color: #18181b;
-  transition: background-color 0.15s ease;
-}
-
-.favorites-panel__select-button:hover {
-  background-color: #f8fafc;
+  white-space: nowrap;
+  transition: color 0.15s ease;
 }
 
 .favorites-panel__select-button--active {
-  background-color: #eff6ff;
-  color: #1d4ed8;
+  color: #ffffff;
   font-weight: 600;
-}
-
-.favorites-panel__select-button--active:hover {
-  background-color: #dbeafe;
 }
 
 .favorites-panel__remove-button {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  margin: 0 4px;
+  width: 30px;
+  height: 100%;
   border: none;
-  border-radius: 6px;
   background: transparent;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1;
   color: #9ca3af;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  padding: 0 8px 0 2px;
+  transition: color 0.15s ease, background-color 0.15s ease;
 }
 
 .favorites-panel__remove-button:hover {
-  background-color: #fee2e2;
   color: #dc2626;
+  background-color: rgba(220, 38, 38, 0.08);
 }
 
-.favorites-panel__remove-button:active {
-  background-color: #fecaca;
-  color: #b91c1c;
+.favorites-panel__item:has(.favorites-panel__select-button--active) .favorites-panel__remove-button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.favorites-panel__item:has(.favorites-panel__select-button--active) .favorites-panel__remove-button:hover {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.15);
 }

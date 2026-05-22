@@ -1,9 +1,10 @@
 .current-weather-card {
   border: 1.5px solid #e4e4e7;
+  border-top: 3px solid #38bdf8;
   border-radius: 12px;
   padding: 24px;
   background-color: #ffffff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
 }
 
 .current-weather-card__header {
@@ -30,6 +31,8 @@
 .current-weather-card__icon {
   display: block;
   flex-shrink: 0;
+  width: 72px;
+  height: 72px;
 }
 
 .current-weather-card__temperature {
@@ -43,20 +46,31 @@
 
 .current-weather-card__details {
   margin: 0;
-  padding: 0;
+  padding: 16px 0 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid #e8f0f7;
 }
 
 .current-weather-card__details li {
-  background-color: #f1f5f9;
-  border-radius: 20px;
-  padding: 4px 12px;
+  padding: 0 12px;
   font-size: 13px;
   font-weight: 500;
   color: #374151;
+  text-align: center;
+  border-right: 1px solid #e8f0f7;
+}
+
+.current-weather-card__details li:first-child {
+  padding-left: 0;
+  text-align: left;
+}
+
+.current-weather-card__details li:last-child {
+  padding-right: 0;
+  text-align: right;
+  border-right: none;
 }
 
 .current-weather-card__favorite-button {

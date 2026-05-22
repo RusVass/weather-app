@@ -1,7 +1,7 @@
 .app {
   margin: 0 auto;
-  max-width: 720px;
-  padding: 56px 20px 80px;
+  max-width: 780px;
+  padding: 56px 24px 80px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -16,6 +16,8 @@
 
 .app__title {
   margin: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d0e4f0;
   font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.5px;
