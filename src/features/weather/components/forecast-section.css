@@ -1,0 +1,48 @@
+.forecast-section {
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.forecast-section__title {
+  margin: 0 0 12px;
+}
+
+.forecast-section__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.forecast-section__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #e4e4e7;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.forecast-section__date {
+  margin: 0;
+  min-width: 96px;
+  font-weight: 600;
+}
+
+.forecast-section__icon {
+  display: block;
+}
+
+.forecast-section__temps {
+  margin: 0;
+  min-width: 114px;
+}
+
+.forecast-section__condition {
+  margin: 0;
+  color: #52525b;
+}

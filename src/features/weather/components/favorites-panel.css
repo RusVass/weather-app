@@ -1,0 +1,53 @@
+.favorites-panel {
+  border: 1px solid #d4d4d8;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.favorites-panel__title {
+  margin: 0 0 12px;
+}
+
+.favorites-panel__empty {
+  margin: 0;
+  color: #52525b;
+}
+
+.favorites-panel__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.favorites-panel__item {
+  display: flex;
+  gap: 8px;
+}
+
+.favorites-panel__select-button {
+  flex: 1;
+  min-height: 36px;
+  border: 1px solid #a1a1aa;
+  border-radius: 8px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.favorites-panel__select-button--active {
+  border-color: #2563eb;
+  background-color: #dbeafe;
+}
+
+.favorites-panel__remove-button {
+  min-height: 36px;
+  border: none;
+  border-radius: 8px;
+  padding: 0 12px;
+  cursor: pointer;
+  background-color: #dc2626;
+  color: #ffffff;
+}
