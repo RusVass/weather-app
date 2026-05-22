@@ -1,6 +1,7 @@
 import { getWeatherApiBaseUrl, getWeatherApiKey } from '../config/env.ts'
 import { APP_ERROR_CODE, AppError, type AppErrorCode } from '../types/app-error.ts'
 import type { CityName, CurrentWeather, ForecastDay } from '../types/weather.ts'
+import { normalizeCityName } from '../utils/normalize-city-name.ts'
 import { mapCurrentWeather, mapForecastDay } from './weather-api.mapper.ts'
 import type {
   WeatherApiCurrentResponse,
@@ -27,7 +28,7 @@ const createApiUrl = (
 ): string => {
   const params = new URLSearchParams({
     key: getWeatherApiKey(),
-    q: cityName,
+    q: normalizeCityName(cityName),
     lang: 'uk',
   })
 

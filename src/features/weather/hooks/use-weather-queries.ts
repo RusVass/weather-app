@@ -1,6 +1,7 @@
 import { useQuery, type UseQueryResult } from '@tanstack/react-query'
 import { fetchCurrentWeather, fetchForecast } from '../../../shared/api/index.ts'
 import type { CurrentWeather, ForecastDay } from '../../../shared/types/weather.ts'
+import { normalizeCityName } from '../../../shared/utils/normalize-city-name.ts'
 import { useWeatherStore } from '../store/index.ts'
 
 const FORECAST_DAYS_COUNT = 5
@@ -10,7 +11,7 @@ const normalizeSelectedCity = (selectedCity: string | null): string => {
     return ''
   }
 
-  return selectedCity.trim()
+  return normalizeCityName(selectedCity)
 }
 
 export const useCurrentWeatherQuery = (): UseQueryResult<CurrentWeather> => {
